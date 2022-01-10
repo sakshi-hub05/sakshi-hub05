@@ -248,6 +248,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:radial/sliver.dart';
 
 /// A text field that also has buttons to select all the text and copy the
 /// selected text to the clipboard.
@@ -296,6 +297,14 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                   icon: const Icon(Icons.select_all),
                   onPressed: Actions.handler<SelectAllIntent>(
                       context, const SelectAllIntent()),
+                ),
+                IconButton(
+                  icon:Text("SliverAppBar"),
+                  onPressed:(){
+                    Navigator.push<void>(context, new MaterialPageRoute(
+                        builder: (context) =>
+                            MyStatefulWidget()));
+                  }
                 ),
                 const Spacer(),
               ],
